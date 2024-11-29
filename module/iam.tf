@@ -86,7 +86,7 @@ resource "aws_iam_policy" "eks-oidc-policy" {
       ]
       Effect   = "Allow"
       Resource = [
-       "arn:aws:s3:::my-aws-bucket24"
+       "arn:aws:s3:::my-aws-bucket24",
        "arn:aws:s3:::my-aws-bucket24/*"
     }]
     Version = "2012-10-17"
