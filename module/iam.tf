@@ -80,12 +80,14 @@ resource "aws_iam_policy" "eks-oidc-policy" {
   policy = jsonencode({
     Statement = [{
       Action = [
-        "s3:ListAllMyBuckets",
-        "s3:GetBucketLocation",
+        "s3:ListBucket",
+        "s3:GetObject",
         "*"
       ]
       Effect   = "Allow"
-      Resource = "*"
+      Resource = [
+       "arn:aws:s3:::my-aws-bucket24"
+       "arn:aws:s3:::my-aws-bucket24/*"
     }]
     Version = "2012-10-17"
   })
